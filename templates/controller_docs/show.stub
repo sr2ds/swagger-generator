@@ -2,35 +2,33 @@
      * @param int $id
      * @return Response
      *
-     * @SWG\Get(
+     * @OA\Get(
      *      path="/$MODEL_NAME_PLURAL_CAMEL$/{id}",
      *      summary="Display the specified $MODEL_NAME$",
      *      tags={"$MODEL_NAME$"},
+     *      operationId="get",
      *      description="Get $MODEL_NAME$",
-     *      produces={"application/json"},
-     *      @SWG\Parameter(
-     *          name="id",
+     *      @OA\RequestBody(
      *          description="id of $MODEL_NAME$",
-     *          type="integer",
      *          required=true,
-     *          in="path"
+     *          @OA\MediaType(
+     *            mediaType="application/json",
+     *            @OA\Schema(ref="#/components/schemas/$MODEL_NAME$")
+     *          )
      *      ),
-     *      @SWG\Response(
+     *      @OA\Response(
      *          response=200,
      *          description="successful operation",
-     *          @SWG\Schema(
-     *              type="object",
-     *              @SWG\Property(
+     *          @OA\Schema(
+     *              @OA\Property(
      *                  property="success",
-     *                  type="boolean"
      *              ),
-     *              @SWG\Property(
+     *              @OA\Property(
      *                  property="data",
      *                  ref="#/definitions/$MODEL_NAME$"
      *              ),
-     *              @SWG\Property(
+     *              @OA\Property(
      *                  property="message",
-     *                  type="string"
      *              )
      *          )
      *      )
