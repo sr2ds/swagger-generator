@@ -10,11 +10,11 @@
      *      operationId="update",
      *      description="Update $MODEL_NAME$",
      *      @OA\RequestBody(
-     *           description="Client to create",
+     *           description="$MODEL_NAME$ to create",
      *           required=true,
      *           @OA\MediaType(
      *             mediaType="application/json",
-     *             @OA\Schema(ref="#/components/schemas/Client")
+     *             @OA\Schema(ref="#/components/schemas/$MODEL_NAME$")
      *           )
      *      ),
      *      @OA\Response(
